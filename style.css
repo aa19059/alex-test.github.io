@@ -1,0 +1,156 @@
+/* --- Global Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #fdfdfd;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Navbar --- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  padding: 15px 40px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+header h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a:hover {
+  color: #a67c52; /* warm earthy tone */
+}
+
+/* --- Hero --- */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* --- Sections --- */
+section {
+  padding: 80px 15%;
+}
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #a67c52;
+  margin: 10px auto 0;
+}
+
+/* --- About --- */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.about img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* --- Portfolio --- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.portfolio-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.portfolio-item img {
+  width: 100%;
+  display: block;
+}
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+.portfolio-item .info {
+  padding: 15px;
+}
+.portfolio-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #a67c52;
+}
+
+/* --- Contact --- */
+.contact form {
+  display: grid;
+  gap: 15px;
+  max-width: 600px;
+  margin: auto;
+}
+.contact input, .contact textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font: inherit;
+}
+.contact button {
+  background: #a67c52;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.contact button:hover {
+  background: #8b623f;
+}
+
+/* --- Footer --- */
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+}
