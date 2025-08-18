@@ -123,7 +123,7 @@ section h2::after {
 }
 
 /* --- Contact --- */
-.contact form {
+.contact s {
   display: grid;
   gap: 15px;
   max-width: 600px;
@@ -135,25 +135,28 @@ section h2::after {
   border-radius: 5px;
   font: inherit;
 }
-.contact button {
-  background: #a67c52;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.contact button:hover {
-  background: #8b623f;
-}
 
 /* --- Footer --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure main content grows and pushes footer down */
+main {
+  flex: 1;
+}
+
+/* Footer styles */
 footer {
+  width: 100%;
   background: #222;
   color: #ccc;
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
+  font-size: 0.95rem;
 }
 
 /* --- Navbar Dropdown --- */
@@ -231,4 +234,12 @@ nav ul li a {
   section {
     padding: 60px 5%;
   }
+}
+.info-item {
+  display: flex;
+  align-items: center;  /* vertically align icon + text */
+  gap: 10px; /* space between icon and text */
+  font-size: 1rem;
+  padding: 20px;
+  color: #555;
 }
