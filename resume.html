@@ -40,6 +40,22 @@
 </section>
 </main>
 
+<script>
+  const iframe = document.getElementById('content-frame');
+  const menuLinks = document.querySelectorAll('nav ul li a');
+
+  iframe.addEventListener('load', () => {
+    const iframeUrl = iframe.contentWindow.location.pathname;
+    
+    menuLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === iframeUrl.split('/').pop()) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
 <footer>
   <p>&copy; 2025 Jane Doe</p>
 </footer>

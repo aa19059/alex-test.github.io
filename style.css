@@ -4,12 +4,18 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+
+html, body {
+  height: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: #333;
   line-height: 1.6;
   background-color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  scroll-padding-top: 80px; /* space for fixed header */
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -28,19 +34,64 @@ header {
   align-items: center;
   z-index: 1000;
 }
+
 header h1 {
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 1px;
 }
+
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  padding: 5px 0;
+}
+
 nav ul li a:hover {
   color: #a67c52;
+}
+
+/* --- Navbar Dropdown --- */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  min-width: 150px;
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background: #f2f2f2;
+  color: #a67c52;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 /* --- Hero --- */
@@ -54,10 +105,12 @@ nav ul li a:hover {
   color: white;
   padding: 0 10%;
 }
+
 .hero h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
+
 .hero p {
   font-size: 1.1rem;
 }
@@ -66,12 +119,14 @@ nav ul li a:hover {
 section {
   padding: 80px 10%;
 }
+
 section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
   position: relative;
 }
+
 section h2::after {
   content: "";
   display: block;
@@ -88,6 +143,7 @@ section h2::after {
   gap: 20px;
   align-items: center;
 }
+
 .about img {
   width: 100%;
   border-radius: 10px;
@@ -99,6 +155,7 @@ section h2::after {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
+
 .portfolio-item {
   background: #fff;
   border-radius: 10px;
@@ -106,16 +163,20 @@ section h2::after {
   overflow: hidden;
   transition: transform 0.2s;
 }
+
 .portfolio-item img {
   width: 100%;
   display: block;
 }
+
 .portfolio-item:hover {
   transform: translateY(-5px);
 }
+
 .portfolio-item .info {
   padding: 15px;
 }
+
 .portfolio-item h3 {
   font-size: 1.1rem;
   margin-bottom: 5px;
@@ -129,124 +190,29 @@ section h2::after {
   max-width: 600px;
   margin: auto;
 }
-.contact input, .contact textarea {
+
+.contact input,
+.contact textarea {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font: inherit;
 }
 
-/* --- Footer --- */
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Ensure main content grows and pushes footer down */
-main {
-  flex: 1;
-}
-
-/* Footer styles */
-footer {
-  width: 100%;
-  background: #222;
-  color: #ccc;
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 0.95rem;
-}
-
-/* --- Navbar Dropdown --- */
-nav ul li {
-  position: relative;
-}
-nav ul li a {
-  padding: 5px 0;
-}
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border-radius: 5px;
-  overflow: hidden;
-  min-width: 150px;
-  z-index: 999;
-}
-.dropdown-menu li {
-  display: block;
-}
-.dropdown-menu li a {
-  display: block;
-  padding: 10px 15px;
-  color: #333;
-  white-space: nowrap;
-}
-.dropdown-menu li a:hover {
-  background: #f2f2f2;
-  color: #a67c52;
-}
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* --- Responsive --- */
-@media (max-width: 1024px) {
-  header h1 {
-    font-size: 1.3rem;
-  }
-  .hero h2 {
-    font-size: 2.2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 15px 5%;
-  }
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .hero {
-    padding: 0 5%;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h2 {
-    font-size: 1.8rem;
-  }
-  .hero p {
-    font-size: 0.9rem;
-  }
-  section {
-    padding: 60px 5%;
-  }
-}
+/* --- Info Items --- */
 .info-item {
   display: flex;
-  align-items: center;  /* vertically align icon + text */
+  align-items: center; /* vertically align icon + text */
   gap: 10px; /* space between icon and text */
   font-size: 1rem;
   padding: 20px;
   color: #555;
 }
 
+/* --- CV Section --- */
 .cv-section {
   margin: 40px auto;
-  max-width: 1100px; /* bigger container */
+  max-width: 1100px;
   text-align: center;
 }
 
@@ -257,9 +223,8 @@ nav ul li a {
 .cv-container {
   border-radius: 12px;
   box-shadow: 0 6px 25px rgba(0,0,0,0.12);
-  border: 1px solid #ddd;
   background: #f9f9f9;
-  height: 800px;   /* bigger height for desktop */
+  height: 800px;
   overflow: hidden;
 }
 
@@ -289,15 +254,90 @@ nav ul li a {
   background: #555;
 }
 
-/* Responsive: bigger on desktop, adjusts on mobile */
+/* --- Footer --- */
+main {
+  flex: 1;
+}
+
+footer {
+  width: 100%;
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.95rem;
+}
+
+/* --- Nav Toggle --- */
+#nav-toggle {
+  transition: transform 0.3s ease;
+}
+
+#nav-toggle.open {
+  transform: rotate(180deg);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px 5%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    padding: 0 5%;
+  }
+
+  .cv-section {
+    margin-top: 100px;
+  }
+
   .cv-container {
-    height: 500px; /* smaller height for tablets */
+    height: 500px;
   }
 }
 
 @media (max-width: 480px) {
-  .cv-container {
-    height: 400px; /* smaller height for phones */
+  .hero h2 {
+    font-size: 1.8rem;
   }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  section {
+    padding: 60px 5%;
+  }
+  .cv-container {
+    height: 400px;
+  }
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
 }
