@@ -7,57 +7,65 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-<header>
-  <h1><a href="index.html">Jane Doe</a></h1>
-  <nav>
+  <!-- Off-screen mobile menu -->
+  <div class="off-screen-menu">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="resume.html">Resume</a></li>
-      <li class="dropdown">
-        <a href="#">Projects ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="project1.html">Project 1</a></li>
-          <li><a href="project2.html">Project 2</a></li>
-          <li><a href="project3.html">Project 3</a></li>
-        </ul>
-      </li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+<header>
+  <h1><a href="index.html">Jane Doe</a></h1>
+
+  <!-- Hamburger only for mobile -->
+  <div class="ham-menu" id="ham-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Desktop nav -->
+  <nav class="desktop-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile off-screen nav -->
+  <nav class="off-screen-menu" id="off-screen-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
-<main>
 
-  <section class="contact">
-    <h2>My CV</h2>
-  <section class="cv-section">
-  <div class="cv-container">
-    <iframe src="pdf/AlexandruAilenei.pdf" class="cv-frame"></iframe>
-  </div>
-  <div class="cv-download">
-    <a href="pdf/AlexandruAilenei.pdf" target="_blank">📄 Open / Download CV</a>
-  </div>
-</section>
-</main>
+  <main>
+    <section class="contact">
+      <h2>My CV</h2>
+      <section class="cv-section">
+        <div class="cv-container">
+          <iframe src="pdf/AlexandruAilenei.pdf" class="cv-frame"></iframe>
+        </div>
+        <div class="cv-download">
+          <a href="pdf/AlexandruAilenei.pdf" target="_blank">📄 Open / Download CV</a>
+        </div>
+      </section>
+    </section>
+  </main>
 
-<script>
-  const iframe = document.getElementById('content-frame');
-  const menuLinks = document.querySelectorAll('nav ul li a');
+  <footer>
+    <p>&copy; 2025 Jane Doe</p>
+  </footer>
 
-  iframe.addEventListener('load', () => {
-    const iframeUrl = iframe.contentWindow.location.pathname;
-    
-    menuLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === iframeUrl.split('/').pop()) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
-
-<footer>
-  <p>&copy; 2025 Jane Doe</p>
-</footer>
+  <script src="./script.js"></script>
 </body>
 </html>

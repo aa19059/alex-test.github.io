@@ -7,22 +7,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Header -->
-<header>
-  <h1><a href="index.html">Jane Doe</a></h1>
-  <nav>
+  <!-- Off-screen mobile menu -->
+  <div class="off-screen-menu">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="resume.html">Resume</a></li>
-      <li class="dropdown">
-        <a href="#">Projects ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="project1.html">Project 1</a></li>
-          <li><a href="project2.html">Project 2</a></li>
-          <li><a href="project3.html">Project 3</a></li>
-        </ul>
-      </li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+<header>
+  <h1><a href="index.html">Jane Doe</a></h1>
+
+  <!-- Hamburger only for mobile -->
+  <div class="ham-menu" id="ham-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Desktop nav -->
+  <nav class="desktop-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile off-screen nav -->
+  <nav class="off-screen-menu" id="off-screen-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -56,4 +76,5 @@
   </footer>
 
 </body>
+  <script src="./script.js"></script>
 </html>

@@ -23,8 +23,7 @@ a {
 
 /* --- Navbar --- */
 header {
-  position: fixed;
-  top: 0;
+  position: relative; /* or just remove 'position: fixed' */
   width: 100%;
   background: white;
   padding: 15px 5%;
@@ -34,6 +33,7 @@ header {
   align-items: center;
   z-index: 1000;
 }
+
 
 header h1 {
   font-size: 1.5rem;
@@ -268,67 +268,92 @@ footer {
   font-size: 0.95rem;
 }
 
-/* --- Nav Toggle --- */
-#nav-toggle {
-  transition: transform 0.3s ease;
+/* Desktop nav (default) */
+.desktop-nav {
+  display: flex;
 }
 
-#nav-toggle.open {
-  transform: rotate(180deg);
+.desktop-nav ul {
+  display: flex;
+  gap: 20px;
 }
 
-/* --- Responsive --- */
-@media (max-width: 1024px) {
-  header h1 {
-    font-size: 1.3rem;
-  }
-  .hero h2 {
-    font-size: 2.2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
+.desktop-nav a {
+  color: #333;
+  text-decoration: none;
+}
+.desktop-nav a:hover {
+  color: #a67c52;
 }
 
+/* Mobile hamburger & off-screen menu */
+.ham-menu {
+  display: none;
+  cursor: pointer;
+  width: 35px;
+  height: 30px;
+  position: relative;
+  z-index: 1000;
+}
+.ham-menu span {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #a67c52;
+  left: 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+.ham-menu span:nth-child(1) { top: 6px; }
+.ham-menu span:nth-child(2) { top: 14px; }
+.ham-menu span:nth-child(3) { top: 22px; }
+.ham-menu.active span:nth-child(1) {
+  transform: rotate(45deg); top: 14px;
+}
+.ham-menu.active span:nth-child(2) { opacity: 0; }
+.ham-menu.active span:nth-child(3) {
+  transform: rotate(-45deg); top: 14px;
+}
+
+.off-screen-menu {
+  background-color: rgb(34, 37, 49);
+  height: 100vh;
+  width: 100%;
+  max-width: 400px;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.off-screen-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.off-screen-menu a {
+  color: white;
+  font-size: 2rem;
+}
+.off-screen-menu a:hover {
+  color: #a67c52;
+}
+.off-screen-menu.active { right: 0; }
+
+/* Responsive */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 15px 5%;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero {
-    padding: 0 5%;
-  }
-
-  .cv-section {
-    margin-top: 100px;
-  }
-
-  .cv-container {
-    height: 500px;
-  }
+  .desktop-nav { display: none; }
+  .ham-menu { display: block; }
 }
 
-@media (max-width: 480px) {
-  .hero h2 {
-    font-size: 1.8rem;
-  }
-  .hero p {
-    font-size: 0.9rem;
-  }
-  section {
-    padding: 60px 5%;
-  }
-  .cv-container {
-    height: 400px;
-  }
+@media (min-width: 769px) {
+  .off-screen-menu { display: none; }
 }
 
 .hero h2 {
