@@ -90,10 +90,6 @@ nav ul li a:hover {
   color: #a67c52;
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
 /* --- Hero --- */
 .hero {
   height: 100vh;
@@ -353,7 +349,9 @@ footer {
 }
 
 @media (min-width: 769px) {
-  .off-screen-menu { display: none; }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 }
 
 .hero h2 {
@@ -365,4 +363,174 @@ footer {
 .hero p {
   font-size: 1.1rem;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* --- About Me Section --- */
+.about-me {
+  padding: 100px 10%;
+  background-color: #fdfdfd;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #a67c52;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-photo img {
+    max-width: 300px;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* --- Dropdown (Desktop) --- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  min-width: 180px;
+  z-index: 999;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+}
+
+.dropdown-menu li a:hover {
+  background: #f2f2f2;
+  color: #a67c52;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* --- Mobile dropdown inside burger menu --- */
+.off-screen-menu .dropdown-menu {
+  display: none;
+  background: rgb(34, 37, 49);
+  margin-top: 10px;
+}
+
+.off-screen-menu .dropdown-menu li a {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.off-screen-menu .dropdown-menu li a:hover {
+  color: #6F86FF;
+}
+
+/* Show mobile dropdown when clicked */
+.off-screen-menu .dropdown.active .dropdown-menu {
+  display: block;
+}
+.off-screen-menu .dropdown.active .dropdown-menu {
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+/* --- Desktop dropdown (hover only) --- */
+@media (min-width: 769px) {
+  .desktop-nav .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    min-width: 180px;
+    z-index: 999;
+  }
+
+  .desktop-nav .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .desktop-nav .dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+  }
+
+  .desktop-nav .dropdown-menu li a:hover {
+    background: #f2f2f2;
+    color: #a67c52;
+  }
+}
+
+/* --- Mobile dropdown inside burger menu --- */
+@media (max-width: 768px) {
+  .off-screen-menu .dropdown-menu {
+    display: none;
+    background: rgb(34, 37, 49);
+    margin-top: 10px;
+  }
+
+  .off-screen-menu .dropdown.active .dropdown-menu {
+    display: block;
+  }
+
+  .off-screen-menu .dropdown-menu li a {
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .off-screen-menu .dropdown-menu li a:hover {
+    color: #6F86FF;
+  }
 }

@@ -7,46 +7,55 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Off-screen mobile menu -->
-  <div class="off-screen-menu">
+    <!-- Off-screen mobile menu -->
+  <div class="off-screen-menu" id="off-screen-menu">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <a href="#">Projects ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="project1.html">Project 1</a></li>
+          <li><a href="project2.html">Project 2</a></li>
+          <li><a href="project3.html">Project 3</a></li>
+          <li><a href="project4.html">Project 4</a></li>
+          <li><a href="project5.html">Project 5</a></li>
+        </ul>
+      </li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 
-<header>
-  <h1><a href="index.html">Jane Doe</a></h1>
+  <!-- Header -->
+  <header>
+    <h1><a href="index.html">Jane Doe</a></h1>
 
-  <!-- Hamburger only for mobile -->
-  <div class="ham-menu" id="ham-menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <!-- Hamburger for mobile -->
+    <div class="ham-menu" id="ham-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <!-- Desktop nav -->
-  <nav class="desktop-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Mobile off-screen nav -->
-  <nav class="off-screen-menu" id="off-screen-menu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <!-- Desktop navigation -->
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li class="dropdown">
+          <a href="#">Projects ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="project1.html">Project 1</a></li>
+            <li><a href="project2.html">Project 2</a></li>
+            <li><a href="project3.html">Project 3</a></li>
+            <li><a href="project4.html">Project 4</a></li>
+            <li><a href="project5.html">Project 5</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
 <main>
 <section class="contact">
@@ -60,10 +69,6 @@
     <div class="info-item">
       <img src="https://img.icons8.com/ios-filled/24/000000/new-post.png" alt="Email">
       <p>jane.doe@example.com</p>
-    </div>
-    <div class="info-item">
-      <img src="https://img.icons8.com/ios-filled/24/000000/phone.png" alt="Phone">
-      <p>+1 (234) 567-890</p>
     </div>
   </div>
   </main>
