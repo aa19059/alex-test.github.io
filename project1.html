@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Name | Interior Design Portfolio</title>
+  <link rel="stylesheet" href="style.css"> <!-- global styles -->
+  <link rel="stylesheet" href="styleProject.css"> <!-- project-specific styles -->
+</head>
+<body>
+
+  <!-- Off-screen mobile menu -->
+  <div class="off-screen-menu" id="off-screen-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <a href="#">Projects ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="project1.html">Project 1</a></li>
+          <li><a href="project2.html">Project 2</a></li>
+          <li><a href="project3.html">Project 3</a></li>
+          <li><a href="project4.html">Project 4</a></li>
+          <li><a href="project5.html">Project 5</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1><a href="index.html">Jane Doe</a></h1>
+    <div class="ham-menu" id="ham-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="#">Projects ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="project1.html">Project 1</a></li>
+            <li><a href="project2.html">Project 2</a></li>
+            <li><a href="project3.html">Project 3</a></li>
+            <li><a href="project4.html">Project 4</a></li>
+            <li><a href="project5.html">Project 5</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero Section for Project -->
+    <section class="hero" style="background: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;">
+      <div>
+        <h2>Modern Living Room Renovation</h2>
+        <p>New York City, USA</p>
+      </div>
+    </section>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+      <div class="slides">
+        <img src="https://images.unsplash.com/photo-1560184897-e4c8c03bbad0?auto=format&fit=crop&w=1200&q=80" alt="Living Room 1">
+      </div>
+      <div class="slides">
+        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c0d?auto=format&fit=crop&w=1200&q=80" alt="Living Room 2">
+      </div>
+      <div class="slides">
+        <img src="https://images.unsplash.com/photo-1598300052601-8f719e3c97a0?auto=format&fit=crop&w=1200&q=80" alt="Living Room 3">
+      </div>
+
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <!-- Project Description -->
+    <section class="project-description">
+      <h3>Project Overview</h3>
+      <p>This modern living room renovation project focused on blending functionality with a warm, inviting aesthetic. Key elements include open space planning, natural light maximization, and carefully curated furniture and décor. Sustainable materials were chosen to reflect both style and environmental consciousness.</p>
+
+      <h3>Design Details</h3>
+      <p>The color palette incorporates soft neutrals with accents of gold and wood tones, creating a sophisticated yet cozy ambiance. Lighting fixtures were strategically placed to enhance architectural features and highlight art pieces. This project showcases a perfect balance between contemporary design and comfort.</p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jane Doe | Interior Design Portfolio</p>
+  </footer>
+
+  <script src="script.js"></script> <!-- existing JS for menu & scroll -->
+</body>
+</html>

@@ -534,3 +534,34 @@ footer {
     color: #6F86FF;
   }
 }
+
+/* MOBILE DROPDOWN BEHAVIOR */
+@media (max-width: 768px) {
+  .off-screen-menu .dropdown-menu {
+    display: none;
+    background: rgb(34, 37, 49);
+    margin-top: 8px;
+    border-radius: 6px;
+    padding: 5px 0;
+  }
+
+  .off-screen-menu .dropdown.active .dropdown-menu {
+    display: block;
+  }
+}
+
+/* DESKTOP DROPDOWN (hover only) */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+.off-screen-menu .dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.off-screen-menu .dropdown.active .dropdown-menu {
+  max-height: 300px; /* enough to fit your 5 links */
+}
