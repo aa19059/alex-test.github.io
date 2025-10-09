@@ -50,31 +50,35 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('.feature-text, .gallery-item').forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      el.classList.add('visible');
-    }
-  });
-});
-// Project slideshow
-let slideIndex = 0;
-showSlides();
+// --- Slideshow ---
+let slideIndex = 1;
+showSlides(slideIndex);
 
-function showSlides() {
-  let slides = document.getElementsByClassName("slides");
-  for (let i = 0; i < slides.length; i++) {
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("slides");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+  for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1; }
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 4000); // Change image every 4 seconds
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
 
-function changeSlide(n) {
-  slideIndex += n - 1;
-  showSlides();
-}
-
+// Auto slideshow
+setInterval(() => { plusSlides(1); }, 5000);
