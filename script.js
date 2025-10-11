@@ -81,4 +81,4 @@ function showSlides(n) {
 }
 
 // Auto slideshow
-setInterval(() => { plusSlides(1); }, 5000);
+// setInterval(() => { plusSlides(1); }, 5000);

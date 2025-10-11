@@ -6,6 +6,7 @@
   <title>Interior Design Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<body>
   <!-- Off-screen mobile menu -->
   <div class="off-screen-menu" id="off-screen-menu">
     <ul>
@@ -28,12 +29,8 @@
   <!-- Header -->
   <header>
     <h1><a href="index.html">Jane Doe</a></h1>
-
-    <!-- Hamburger for mobile -->
     <div class="ham-menu" id="ham-menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
 
     <!-- Desktop navigation -->
@@ -55,37 +52,49 @@
       </ul>
     </nav>
   </header>
-<main>
-  <!-- Slideshow Section -->
-  <section class="slideshow">
-    <div class="slides fade">
-      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Living Room">
-    </div>
-    <div class="slides fade">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" alt="Bedroom Interior">
-    </div>
-    <div class="slides fade">
-      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Kitchen Design">
-    </div>
 
-    <!-- Navigation arrows -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <main>
+    <!-- Title + Description -->
+    <section class="intro-text">
+      <h2>Timeless Interiors</h2>
+      <p>Explore a curated selection of modern and classic interiors that blend function and beauty. Each design reflects a balance of warmth, texture, and elegant simplicity to create spaces that feel like home.</p>
+    </section>
 
-    <!-- Dots -->
-    <div class="dots">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-  </section>
-</main>
+    <!-- Slideshow Section -->
+    <section class="slideshow">
+      <div class="slides fade">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Living Room">
+      </div>
+      <div class="slides fade">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" alt="Bedroom Interior">
+      </div>
+      <div class="slides fade">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Kitchen Design">
+      </div>
 
-  <!-- Footer -->
+      <!-- Navigation arrows -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <!-- Dots -->
+      <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </section>
+
+    <!-- Section Below Slideshow -->
+    <section class="below-slideshow">
+      <p>Every project tells a story — from the initial concept to the final touch. My design approach focuses on creating spaces that not only look stunning but also reflect the unique personalities of those who live in them.</p>
+      <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=600&q=80" alt="Interior detail">
+    </section>
+  </main>
+
   <footer>
     <p>&copy; 2025 Jane Doe | Interior Design Portfolio</p>
   </footer>
 
-</body>
   <script src="./script.js"></script>
+</body>
 </html>

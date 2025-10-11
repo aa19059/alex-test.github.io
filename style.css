@@ -675,3 +675,46 @@ footer {
   background-color: #a67c52;
   transform: scale(1.4);
 }
+
+.intro-text {
+  text-align: center;
+  padding: 60px 10% 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  color: #a67c52;
+  margin-bottom: 15px;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Section below slideshow */
+.below-slideshow {
+  text-align: center;
+  padding: 60px 10%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.below-slideshow img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.below-slideshow p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
